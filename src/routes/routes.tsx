@@ -4,10 +4,10 @@ import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import AdminDashboard from "../pages/admin/AdminDashboard";
-import CreateStudent from "../pages/admin/CreateStudent";
+import adminPaths from "./admin.routes";
 
 const router = createBrowserRouter([
+
   {
     path: "/",
         element: <App />,
@@ -29,21 +29,27 @@ const router = createBrowserRouter([
     {
     path: "/admin",
         element: <App />,
-        children: [
-            {
-                // path: "dashboard",
-            index:true,
-            element: <AdminDashboard/>
-            },
-            {
-            path: "createStudent",
-            element: <CreateStudent/>
-            },
-        
-        ],
+        children: adminPaths,
+    },
+
+    // For Faculty
+
+    {
+    path: "/faculty",
+        element: <App />,
+        children: adminPaths,
+    },
+
+    // For Student
+
+    {
+    path: "/student",
+        element: <App />,
+        children: adminPaths,
     },
 
     // Global
+    
     {
         path: "/login",
         element: <Login/>
