@@ -2,6 +2,7 @@ import { Layout, Menu, MenuProps } from "antd";
 const { Header, Content, Footer, Sider } = Layout;
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { Children, createElement } from "react";
+import { Outlet } from "react-router-dom";
 
 
 
@@ -60,8 +61,9 @@ const MainLayout = () => {
               padding: 24,
               minHeight: 360,
             }}
-          >
-            <h1>The main content should go here </h1>
+                    >
+            {/* This is the Mainlayout */}
+            <Outlet/>
           </div>
         </Content>
         <Footer style={{ textAlign: 'center' }}>
